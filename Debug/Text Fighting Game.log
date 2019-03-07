@@ -1,1 +1,22 @@
-﻿  Text Fighting Game.vcxproj -> C:\Users\sebas\Desktop\Programmieren\C++\Text Fighting Game\Debug\Text Fighting Game.exe
+﻿  Text Fighting Game.cpp
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(86): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(87): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(88): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(89): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(90): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(91): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(92): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(93): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(94): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(95): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(96): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(99): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(158): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(199): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(205): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(209): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(211): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(213): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(215): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(218): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
+c:\users\sebas\desktop\programmieren\c++\text fighting game\text fighting game\text fighting game.cpp(276): error C3861: "Sleep": Bezeichner wurde nicht gefunden.
