@@ -294,6 +294,10 @@ int main()
 
 			}
 		}
+		/*=====================================================
+		Vor nächstem content Update erstmal kommentare einbauen
+		=====================================================*/
+
 
 		/*=========================================================================
 		Dritten Kampf(gegen Eis) eibauen, vielleicht geht er zu einem vereisten see?
