@@ -51,6 +51,10 @@ int main()
 	enemy1.hp = 120;
 	enemy1.critAtk;
 
+	Enemy enemy2;
+	enemy2.hp = 120;
+	enemy2.critAtk;
+
 
 
 	std::cout << "Welcome to this text based fighting game.\nThe goal of the game is to kill all the enemies including the Boss";
@@ -85,7 +89,7 @@ int main()
 			//starting the battle
 			while (enemy1.hp > 0 && player.hp > 0)
 			{
-				std::cout << "\nDo you want to attack or heal?\n";
+				std::cout << "\n\nDo you want to attack or heal?\n";
 				std::cin >> fightDecision;
 				if (player.element == water | player.element == Water)
 				{
@@ -141,7 +145,7 @@ int main()
 				Sleep(200);
 				if (player.hp > 0 && enemy1.hp > 0)
 				{
-					std::cout << "\The enemy now attacks!";
+					std::cout << "\n\nThe enemy now attacks!";
 				}
 				if (player.element == ice | player.element == Ice && player.hp > 0 && enemy1.hp > 0)
 				{
@@ -161,28 +165,139 @@ int main()
 
 				if (enemy1.hp <= 0)
 				{
-					std::cout << "\n\nYou won! Nice job!\n";
-					std::cout << "You go away from the volcano damaged, but alive. You need to find a place to heal!\n";
-					std::cout << "You have heard about the mages which live a few miles away from the volcano, which are said to be dangerous, but have powerful healing abilities.\n";
-					std::cout << "The oter possibility is to go into the forest and go search some herbs yourself. \nWhat do you do?('1' or '2')";
-					std::cin >> uselessVariable;
-					if (uselessVariable == 1)
-					{
-						std::cout << "Good luck on your way to them. But hurry up before you starve or die of thirst!";
-					}
-					else if (uselessVariable == 2)
-					{
-						std::cout << "Let's hope that you will find some herbs. But hurry up before you starve or die of thirst!";
-					}
+					std::cout << "\n\nYou won! Nice job!\n";				
 				}
 				else if (player.hp <= 0)
 				{
 					std::cout << "\n\nYou died!Try again the next time!\n";
 					std::cin.get();
+					return 0;
+				}
+
+			}
+			std::cout << "You go away from the volcano damaged, but alive. You need to find a place to heal!\n";
+			std::cout << "You have heard about the mages which live a few miles away from the volcano, which are said to be dangerous, but have powerful healing abilities.\n";
+			std::cout << "The other possibility is to go into the forest and go search some herbs yourself. \nWhat do you do?('1' or '2')";
+			player.hp = 150;
+			std::cin >> uselessVariable;
+			if (uselessVariable == 1)
+			{
+				std::cout << "\nGood luck on your way to them. But hurry up before you starve or die of thirst!";
+				Sleep(500);
+				std::cout << "\n... like that you start your way to the mages...";
+			}
+			else if (uselessVariable == 2)
+			{
+				std::cout << "\nLet's hope that you will find some herbs. But hurry up before you starve or die of thirst!";
+				Sleep(500);
+				std::cout << "\n... like that you start your way to the forest...";
+			}
+
+			Sleep(500);
+			std::cout << "\n\nAfter some hours you realize how hungry you are and how tired you are...";
+			Sleep(200);
+			std::cout << "\nThe more tired you get, the more you realize how comfortable the ground looks and the hungrier you get, the more ou ralize how tasty those berries look...";
+			Sleep(2000);
+			std::cout << "\n\n'Holy hell you slept long. I saw you laying there on the ground, while I was searching for herbs. You look like you need some'";
+			Sleep(500);
+			std::cout << "\n'Not too talkative huh? Well just take these herbs and maybe something to drink.'";
+			std::cout << "\nWhile you are talking the water you realize how there are some really unnatural movements there ... and something is rising from the water!";
+			Sleep(500);
+			std::cout << "\n\nFuck, it's a dangerous looking creature out of water... what the hell!";
+
+			while (enemy2.hp > 0 && player.hp > 0)
+			{
+				std::cout << "\n\nDo you want to attack or heal?\n";
+				std::cin >> fightDecision;
+				if (player.element == ice | player.element == Ice)
+				{
+					if (fightDecision == "atk")
+					{
+						enemy2.hp = enemy2.hp - player.critAtk;
+						std::cout << "\nNice work! You did " << player.critAtk << " damage!";
+					}
+					else if (fightDecision == "heal")
+					{
+						if (player.hp == 150)
+						{
+							std::cout << "\n\nYou already have full hp!\n";
+						}
+						else
+						{
+							player.hp = player.hp + 15;
+							std::cout << "\nYou now have " << player.hp << " health points!";
+						}
+
+					}
+				}
+				else
+				{
+					if (fightDecision == "atk")
+					{
+						enemy2.hp = enemy2.hp - player.atk;
+
+					}
+					else if (fightDecision == "heal")
+					{
+						if (player.hp == 150)
+						{
+							std::cout << "\nYou already have full hp!\n";
+						}
+						else
+						{
+							player.hp = player.hp + 15;
+							std::cout << "\nYou now have " << player.hp << " health points!";
+						}
+
+					}
+				}
+				if (enemy2.hp > 0 && fightDecision != "heal")
+				{
+					std::cout << "\nThe enemy now has " << enemy2.hp << " hp!";
+				}
+				else if (enemy2.hp <= 0)
+				{
+					std::cout << "\nThe enemy is dead!\n";
+				}
+
+				Sleep(200);
+				if (player.hp > 0 && enemy2.hp > 0)
+				{
+					std::cout << "\n\nThe enemy now attacks!";
+				}
+				if (player.element == fire | player.element == Fire && player.hp > 0 && enemy2.hp > 0)
+				{
+					std::cout << "\nThe enemy did critical damage!";
+					player.hp = player.hp - enemy2.critAtk;
+				}
+				else if (player.element != fire | player.element != Fire && player.hp > 0 && enemy2.hp > 0)
+				{
+					std::cout << "\nThe enemy did some damage!";
+					player.hp = player.hp - enemy2.atk;
+				}
+
+				if (player.hp > 0 && enemy2.hp > 0)
+				{
+					std::cout << "\nYou now have " << player.hp << " health points.";
+				}
+
+				if (enemy2.hp <= 0)
+				{
+					std::cout << "\n\nYou won! Nice job!\n";
+				}
+				else if (player.hp <= 0)
+				{
+					std::cout << "\n\nYou died!Try again the next time!\n";
+					std::cin.get();
+					return 0;
 				}
 
 			}
 		}
+
+		/*=========================================================================
+		Dritten Kampf(gegen Eis) eibauen, vielleicht geht er zu einem vereisten see?
+		==========================================================================*/
 
 
 		else if (decision == 'n')
