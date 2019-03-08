@@ -67,8 +67,8 @@ int main()
 	enemy1.critAtk;
 
 	Enemy enemy2;
-	enemy2.hp = 120;
-	enemy2.atk;
+	enemy2.hp = 120;	//why is it so ga´´hard to balance anything right
+	enemy2.atk;	       // its either way to easyor way too hard
 	enemy2.critAtk;
 
 	Enemy enemy3;
@@ -79,6 +79,7 @@ int main()
 	boss.hp;
 	boss.atk;
 	boss.critAtk;
+
 
 	//introduction
 
@@ -257,7 +258,7 @@ int main()
 			std::cout << "\n\n'Holy hell you slept long. I saw you laying there on the ground, while I was searching for herbs. You look like you need some'";
 			Sleep(500);
 			std::cout << "\n'Not too talkative huh? Well just take these herbs and maybe something to drink.'";
-			std::cout << "\nWhile you are talking the water you realize how there are some really unnatural movements there ... and something is rising from the water!";
+			std::cout << "\nWhile you are taking the water you realize how there are some really unnatural movements there ... and something is rising from the water!";
 			Sleep(500);
 			std::cout << "\n\nFuck, it's a dangerous looking creature out of water... what the hell!";
 
@@ -358,28 +359,246 @@ int main()
 			std::cout << "\n'Oh my god! Thank you so much for saving my life!!";
 			Sleep(500);
 			std::cout << "\nGod damnit. By now I just want to kill the rest of those annoying fucking monsters!";
-			std::cout << "\n'I heard that over at the castle on the ice ought to be a huge monster with its henchmen. You just gott go north-east. It's impossible to miss. Good luck";
+			std::cout << "\n'I heard that over at the castle on the ice ought to be a huge monster with its henchmen. You just gott go north-east. It's impossible to miss. Good luck'";
 			Sleep(600);
-			std::cout << "Thank you. I will free those lands once and for all"
+			std::cout << "\nThank you. I will free those lands once and for all.";
+
+			std::cout << "\nSo our lone hero wandered nort-east, and after some time realized why the guy said, that you could not miss it.";
+			Sleep(1000);
+			std::cout << "\nIt was the hugest building he has ever seen...";
+			std::cout << "\nAnd as soon as he got there, he  knocked on the huge wooden door";
+			std::cout << "\n'Either you fight or you go away you clown?'(1 or 2)";
+			std::cin >> uselessVariable; //ayyyy our favourite useless variable is back at it again
+										//it stays here, that the user doesn't actually have a choice ;)													
+			Sleep(500);
+			if (uselessVariable == 1) {
+				std::cout << "Of course I will fight!";
+			}
+			else if (uselessVariable == 2)
+			{
+				std::cout << "I think I am actually gonna go. Be right back...";
+				std::cout << "\n'Oh no, you are gonna stay here and fight, and I am gonna make you do so!'";
+			}
+			else {
+				std::cout << "Your input was invalid. Please restart the program and try again.";// how poor this fucker has tp be. 
+				std::cin.get();																	// this far into the program and having to restart
+				return 0;
+			}
+			player.hp = 150;
+			//I feel like I know this while loop from somewhere
+
+			while (enemy3.hp > 0 && player.hp > 0)
+			{
+				std::cout << "\n\nDo you want to attack or heal?\n";
+				std::cin >> fightDecision;
+				if (player.element == fire | player.element == Fire)
+				{
+					if (fightDecision == "atk")
+					{//if anybody know how to balance shit like thatproperly, send me a dm on twitter
+						enemy3.hp = enemy3.hp - player.critAtk;//@CoderDespair
+						std::cout << "\nNice work! You did " << player.critAtk << " damage!";
+					}
+					else if (fightDecision == "heal")
+					{
+						if (player.hp == 150)
+						{
+							std::cout << "\n\nYou already have full hp!\n";
+						}
+						else
+						{
+							player.hp = player.hp + 15;
+							std::cout << "\nYou now have " << player.hp << " health points!";
+						}
+
+					}
+				}
+				else
+				{
+					if (fightDecision == "atk")
+					{
+						enemy3.hp = enemy3.hp - player.atk;
+
+					}
+					else if (fightDecision == "heal")
+					{
+						if (player.hp == 150)
+						{
+							std::cout << "\nYou already have full hp!\n";
+						}
+						else
+						{
+							player.hp = player.hp + 15;
+							std::cout << "\nYou now have " << player.hp << " health points!";
+						}
+
+					}
+				}
+				if (enemy3.hp > 0 && fightDecision != "heal")
+				{
+					std::cout << "\nThe enemy now has " << enemy3.hp << " hp!";
+				}
+				else if (enemy3.hp <= 0)
+				{
+					std::cout << "\nThe enemy is dead!\n";
+				}
+
+				Sleep(200);
+				if (player.hp > 0 && enemy3.hp > 0)
+				{
+					std::cout << "\n\nThe enemy now attacks!";
+				}
+				if (player.element == water | player.element == Water && player.hp > 0 && enemy3.hp > 0) // changing variables in a 90 lines of code loop
+				{																						// is literally the most boring thing ever
+					std::cout << "\nThe enemy did critical damage!";
+					player.hp = player.hp - enemy3.critAtk;
+				}
+				else if (player.element != water | player.element != Water && player.hp > 0 && enemy3.hp > 0)
+				{
+					std::cout << "\nThe enemy did some damage!";
+					player.hp = player.hp - enemy3.atk;
+				}
+
+				if (player.hp > 0 && enemy3.hp > 0)
+				{
+					std::cout << "\nYou now have " << player.hp << " health points.";
+				}
+
+				if (enemy3.hp <= 0)
+				{
+					std::cout << "\n\nYou won! Nice job!\n";
+				}
+				else if (player.hp <= 0)
+				{
+					std::cout << "\n\nYou died!Try again the next time!\n";
+					std::cin.get();
+					return 0;
+				}
+
+			}
+			//gonna make his atk better. boss would be too hard the other way
+			player.atk = 35; // hope thats not too much
+			player.hp = 150; // almost forgot
+
+			std::cout << "Wait what is that in the corpse of the monster?\n";
+			std::cout << "."; Sleep(500); std::cout << "."; Sleep(500); std::cout << "."; Sleep(500);
+			std::cout << "\nIt looks like a sword... and it is glowing!";
+			std::cout << "\nThere is also a way bigger healing potion than the one I had before!";
+			std::cout << "\nI think that I am ready to fight the big monster now! He seems to be the king of all the monsters!\n";
+			std::cout << "."; Sleep(500); std::cout << "."; Sleep(500); std::cout << "."; Sleep(500);
+			std::cout << "\nYOU CALLED ME? DIE YOU DIRTY LITTLE FOOL!";
+
+			//honestly, I am pretty sure I know that shit from somewhere
+
+			while (boss.hp > 0 && player.hp > 0)
+			{
+				std::cout << "\n\nDo you want to attack or heal?\n";
+				std::cin >> fightDecision;
+
+				//dont need any of this, cause boss doesnt have element adv so no crits
+
+/*				if (player.element == fire | player.element == Fire)
+				{
+					if (fightDecision == "atk")
+					{
+						enemy3.hp = enemy3.hp - player.critAtk;
+						std::cout << "\nNice work! You did " << player.critAtk << " damage!";
+					}
+					else if (fightDecision == "heal")
+					{
+						if (player.hp == 150)
+						{
+							std::cout << "\n\nYou already have full hp!\n";
+						}
+						else
+						{
+							player.hp = player.hp + 15;
+							std::cout << "\nYou now have " << player.hp << " health points!";
+						}
+
+					}
+				}
+				else 
+				{ */
+					if (fightDecision == "atk")
+					{
+						boss.hp = boss.hp - player.atk;
+
+					}
+					else if (fightDecision == "heal")
+					{
+						if (player.hp == 150)
+						{
+							std::cout << "\nYou already have full hp!\n";
+						}
+						else
+						{
+							player.hp = player.hp + 35;
+							std::cout << "\nYou now have " << player.hp << " health points!";
+						}
+
+					}
+				
+				if (boss.hp > 0 && fightDecision != "heal")
+				{
+					std::cout << "\nThe enemy now has " << boss.hp << " hp!";
+				}
+				else if (boss.hp <= 0)
+				{
+					std::cout << "\nThe enemy is dead!\n";
+				}
+
+				Sleep(200);
+				if (player.hp > 0 && boss.hp > 0)
+				{
+					std::cout << "\n\nThe enemy now attacks!";
+				}
+				if (player.element == water | player.element == Water && player.hp > 0 && boss.hp > 0) // changing variables in a 90 lines of code loop
+				{																					  // is literally the most boring thing ever
+					std::cout << "\nThe enemy did critical damage!";
+					player.hp = player.hp - boss.critAtk;
+				}
+				else if (player.element != water | player.element != Water && player.hp > 0 && boss.hp > 0)
+				{
+					std::cout << "\nThe enemy did some damage!";
+					player.hp = player.hp - boss.atk;
+				}
+
+				if (player.hp > 0 && boss.hp > 0)
+				{
+					std::cout << "\nYou now have " << player.hp << " health points.";
+				}
+
+				if (boss.hp <= 0)
+				{
+					std::cout << "\n\nYou won! Nice job!\n";
+				}
+				else if (player.hp <= 0)
+				{
+					std::cout << "\n\nYou died!Try again the next time!\n";
+					std::cin.get();
+					return 0;
+				}
+
+			}
+
+			// idk how the fuck to end the story so heres just that:
+
+			std::cout << "\nI won... I killed it... I think I actually saved this country and the ones around it... what the fuck";
+			std::cout << "\nI will go back to the village and check if everyone there is doing alright!";
+			std::cout << "\n."; Sleep(500); std::cout << "\n."; Sleep(500); std::cout << "\n."; Sleep(500);
+			std::cout << "\nTo be continued";
+			std::cout << "."; Sleep(500); std::cout << "."; Sleep(500); std::cout << "."; Sleep(500);
+			std::cin.get();
+			return 0;
 		}
-
-
-		//IGNORE THIS 
-		//ITS BASICALLY A TODO LIST
-		/*-------------------------------------------------------------------------
-		Dritten Kampf(gegen Eis) eibauen, vielleicht geht er zu einem vereisten see?
-		story bissl weiter führen
-		--------------------------------------------------------------------------*/
-		//ITS BASICALLY A TODO LIST
-		//IGNORE THIS 
-
-
+		
 		//checking decision
 
 		else if (decision == 'n')
 		{
 			std::cout << "'Get fucking lost then you stupid cunt!'";
 			std::cin.get();
+			return 0;
 		}
 
 
@@ -388,6 +607,34 @@ int main()
 		{
 		std::cout << "Your input was invalid. Please restart the program and try again.";
 		std::cin.get();
+		return 0;
 		}
 	std::cin.get();
 }
+
+
+/*========================================================
+
+After around a week of coding and just below 600 lines of
+code, I have finished my first game...
+
+I think, that this will be a long journey of better and
+better games and programs. Thanks to TheCherno, who has
+the IMO best tutorials on C++ on youtube out there.
+Definitely check him out. If you more into WebDev, check
+out Traversy Media. He is a great guy. I promised myself 
+to donate him the first few dollars which I will ever
+earn, because I am so thankful of him, bringing me to
+programming. <3
+
+If you are looking at this, and want to give me some
+constructive criticism on this code or just ask me
+anything, about myself or whatever then please Dm me on
+Twitter @CoderDespair.
+
+I don't know how far I will come in programming, but see
+this as a message, that everybody starts small and nobody's
+programs are immediately perfect!
+
+Thank you! <3
+=======================================================*/
