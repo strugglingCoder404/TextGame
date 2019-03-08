@@ -351,6 +351,16 @@ int main()
 				}
 
 			}
+
+			//Watch out! some pretty boring story building ahead
+
+			Sleep(1000);
+			std::cout << "\n'Oh my god! Thank you so much for saving my life!!";
+			Sleep(500);
+			std::cout << "\nGod damnit. By now I just want to kill the rest of those annoying fucking monsters!";
+			std::cout << "\n'I heard that over at the castle on the ice ought to be a huge monster with its henchmen. You just gott go north-east. It's impossible to miss. Good luck";
+			Sleep(600);
+			std::cout << "Thank you. I will free those lands once and for all"
 		}
 
 
